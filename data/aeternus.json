@@ -1,0 +1,24 @@
+{
+    "id": 102647436,
+    "name": "Aeternus",
+    "author": "Riot",
+    "creators": ["Riot", "Ryamu", "more"],
+    "verifier": "",
+    "verification": "https://youtu.be/WIjuyPd3kck?si=i983O0li6ArihTEv",
+    "percentToQualify": "10",
+    "password": "Free To Copy",
+    "records": [
+        {
+            "user": "Dewbbs",
+            "link": "https://youtu.be/hMh2waoolfQ?si=cEWbD5a3DiRc7Cy5",
+            "percent": 20,
+            "hz": 240
+        },
+        {
+            "user": "Chill Guy",
+            "link": "https://youtu.be/ITw-BTV9DX8?si=0Q39w7-us-xCnoMD",
+            "percent": 16,
+            "hz": 240
+        }
+    ]
+}
