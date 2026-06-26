@@ -2,14 +2,14 @@
     "id": 102647436,
     "name": "Aeternus",
     "author": "Riot",
-    "creators": ["Riot", "Ryamu", "more"],
+    "creators": ["Riot", "ryamu", "pluff", "icedcave"],
     "verifier": "",
     "verification": "https://youtu.be/WIjuyPd3kck?si=i983O0li6ArihTEv",
     "percentToQualify": "10",
     "password": "Free To Copy",
     "records": [
         {
-            "user": "Dewbbs",
+            "user": "dewbbs",
             "link": "https://youtu.be/hMh2waoolfQ?si=cEWbD5a3DiRc7Cy5",
             "percent": 20,
             "hz": 240
@@ -18,6 +18,24 @@
             "user": "Chill Guy",
             "link": "https://youtu.be/ITw-BTV9DX8?si=0Q39w7-us-xCnoMD",
             "percent": 16,
+            "hz": 240
+        },
+        {
+            "user": "Shock",
+            "link": "https://youtu.be/z9afJdbW8SU?si=ria-mIW5if4W69jL",
+            "percent": 16,
+            "hz": 720
+        },
+        {
+            "user": "monthmai",
+            "link": "https://youtu.be/Q31tEWr82hA?si=tE8S0Q7266blGz5_",
+            "percent": 13,
+            "hz": 240
+        },
+        {
+            "user": "blizzard",
+            "link": "https://youtu.be/RWRdDslE0qc?si=t3abT0lMA-bda-2e",
+            "percent": 11,
             "hz": 240
         }
     ]
