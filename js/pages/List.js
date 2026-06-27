@@ -14,6 +14,38 @@ const roleIconMap = {
     trial: "user-lock",
 };
 
+/**
+ * Format percent for display - handles arrays, strings, and numbers
+ */
+function formatPercent(percent) {
+    if (typeof percent === 'number') {
+        return `${percent}%`;
+    }
+    
+    if (typeof percent === 'string') {
+        // If it's already a range like "72-100", format it with %
+        if (percent.includes('-')) {
+            return `${percent}%`;
+        }
+        return `${percent}%`;
+    }
+    
+    if (Array.isArray(percent)) {
+        // Format each item and join with comma
+        return percent.map(p => {
+            if (typeof p === 'number') {
+                return `${p}%`;
+            }
+            if (typeof p === 'string' && p.includes('-')) {
+                return `${p}%`;
+            }
+            return `${p}%`;
+        }).join(', ');
+    }
+    
+    return '0%';
+}
+
 export default {
     components: { Spinner, LevelAuthors },
     template: `
@@ -62,7 +94,7 @@ export default {
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
-                                <p>{{ record.percent }}%</p>
+                                <p>{{ formatPercent(record.percent) }}</p>
                             </td>
                             <td class="user">
                                 <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
@@ -154,5 +186,6 @@ export default {
     methods: {
         embed,
         score,
+        formatPercent,
     },
 };
