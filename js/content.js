@@ -5,6 +5,37 @@ import { round, score } from './score.js';
  */
 const dir = '/data';
 
+/**
+ * Parse percent value which can be a number, string range, or array
+ * Returns { display, calculate } where display is what to show and calculate is the percent for scoring
+ */
+function parsePercent(percent) {
+    if (typeof percent === 'number') {
+        return { display: percent, calculate: percent };
+    }
+    
+    if (typeof percent === 'string') {
+        // Handle "72-100" format - calculate as max - min
+        const parts = percent.split('-');
+        if (parts.length === 2) {
+            const min = parseInt(parts[0]);
+            const max = parseInt(parts[1]);
+            return { display: percent, calculate: max - min };
+        }
+        return { display: percent, calculate: parseInt(percent) || 0 };
+    }
+    
+    if (Array.isArray(percent)) {
+        // For arrays, sum up all the calculated percentages
+        const parsed = percent.map(p => parsePercent(p));
+        const totalCalculate = parsed.reduce((sum, p) => sum + p.calculate, 0);
+        const display = parsed.map(p => p.display).join(', ');
+        return { display, calculate: totalCalculate };
+    }
+    
+    return { display: 0, calculate: 0 };
+}
+
 export async function fetchList() {
     const listResult = await fetch(`${dir}/_list.json`);
     try {
@@ -18,9 +49,11 @@ export async function fetchList() {
                         {
                             ...level,
                             path,
-                            records: level.records.sort(
-                                (a, b) => b.percent - a.percent,
-                            ),
+                            records: level.records.sort((a, b) => {
+                                const aCalc = parsePercent(a.percent).calculate;
+                                const bCalc = parsePercent(b.percent).calculate;
+                                return bCalc - aCalc;
+                            }),
                         },
                         null,
                     ];
@@ -88,7 +121,10 @@ export async function fetchLeaderboard() {
                 progressed: [],
             };
             const { completed, progressed } = scoreMap[user];
-            if (record.percent === 100) {
+            
+            const { display, calculate } = parsePercent(record.percent);
+            
+            if (calculate === 100) {
                 completed.push({
                     rank: rank + 1,
                     level: level.name,
@@ -101,8 +137,8 @@ export async function fetchLeaderboard() {
             progressed.push({
                 rank: rank + 1,
                 level: level.name,
-                percent: record.percent,
-                score: score(rank + 1, record.percent, level.percentToQualify),
+                percent: display,
+                score: score(rank + 1, calculate, level.percentToQualify),
                 link: record.link,
             });
         });
