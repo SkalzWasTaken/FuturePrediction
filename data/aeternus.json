@@ -10,50 +10,47 @@
         {
             "user": "dewbbs",
             "link": "https://youtu.be/hMh2waoolfQ?si=cEWbD5a3DiRc7Cy5",
-            "percent": {"min": 0, "max": 20}
+            "percent": 20
         },
         {
             "user": "Chill Guy",
             "link": "https://youtu.be/ITw-BTV9DX8?si=0Q39w7-us-xCnoMD",
-            "percent": [
-                {"min": 0, "max": 16},
-                {"min": 72, "max": 100}
-            ]
+            "percent": [16, "72-100"]
         },
         {
             "user": "Shock",
             "link": "https://youtu.be/z9afJdbW8SU?si=ria-mIW5if4W69jL",
-            "percent": {"min": 0, "max": 16}
+            "percent": 16
         },
         {
             "user": "Diamond",
             "link": "https://youtu.be/zyZ2qbjRb2I?si=GUbH-KQOqvTAgHFB",
-            "percent": {"min": 0, "max": 14}
+            "percent": 14
         },
         {
             "user": "Surrounded",
             "link": "https://youtu.be/bY8ZNdxw4k4?si=OKAAvHjAb3b_v76k",
-            "percent": {"min": 0, "max": 14}
+            "percent": 14
         },
         {
             "user": "monthmai",
             "link": "https://youtu.be/Q31tEWr82hA?si=tE8S0Q7266blGz5_",
-            "percent": {"min": 0, "max": 13}
+            "percent": 13
         },
         {
             "user": "blizzard",
             "link": "https://youtu.be/RWRdDslE0qc?si=t3abT0lMA-bda-2e",
-            "percent": {"min": 0, "max": 11}
+            "percent": 11
         },
         {
             "user": "aden",
             "link": "https://www.youtube.com/live/3GCcMgu7MmY?si=hMu92HfHH--CgkwZ&t=3814",
-            "percent": {"min": 0, "max": 10}
+            "percent": 10
         },
         {
             "user": "10oneveryextreme",
             "link": "https://youtu.be/qH3288kb7hM?si=ZV4zUwZLvPZP1PcB",
-            "percent": {"min": 0, "max": 10}
+            "percent": 10
         }
     ]
 }
